@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather-App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="input-holder">
+            <input type="text" id="name"placeholder="enter your name" autocomplete="on">
+            <input type="text" id="city"placeholder="enter city name" autocomplete="on">
+            <button id = "btn">
+                <img src="weather-app-img/images/search.png" alt="searchbox" >
+            </button>
+    </div>
+        <p class="errormessage">invalid country</p>
+
+        <div class="weather-info">
+            <div class="weather-condition">
+                <img src="weather-app-img/images/clear.png" alt=" cloud condition">
+                <h1 class="temp">22°C</h1>
+                <h2 class="city-name">new york</h2>
+            </div>
+        </div>
+        <div class="other-info-container">
+            <div class="other-info">
+                <img src="./weather-app-img/images/humidity.png" alt="humidity">
+                <div class="other-info-detail">
+                    <h4 class="humidity">53%</h4>
+                    <p>humidity</p>
+                </div>
+            </div>
+            <div class="other-info">
+                <img src="./weather-app-img/images/wind.png" alt="wind">
+                <div class="other-info-detail">
+                    <h4 class="wind">5.66km/hr</h4>
+                    <p>wind speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
