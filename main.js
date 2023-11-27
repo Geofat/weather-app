@@ -47,58 +47,36 @@ weatherBtn.addEventListener("click", () => {
                             .then(data => {
                                 console.log(data)
                                 const date = new Date();
-                                weatherDate.append(date)
+                                weatherDate.append(date);
                                 temp.innerHTML = Math.round(data.main.temp) + "°C";
                                 cityName.innerHTML = data.name;
                                 humidity.innerHTML = data.main.humidity + "%";
                                 wind.innerHTML = data.wind.speed + "km/hr";
-                                weatherDescription.innerHTML = data.weather[0].description;
-
-                                switch (data.weather[0].main) {
-                                    case 'clear':
-                                        image.src = "weather-app-img/images/clear.png";
-
-                                        break;
-                                    case 'rain':
-                                        image.src = "weather-app-img/images/rain.png";
-                                        break;
-                                    case 'clouds':
-                                        image.src = "weather-app-img/images/clouds.png";
-                                        
-                                        break;
-                                    case 'snow':
-                                        image.src = "weather-app-img/images/snow.png";
-                                        break;
-                                    case 'mist':
-                                        image.src = "weather-app-img/images/mist.png";
-                                        break;
-                                    case 'drizzle':
-                                        image.src = "weather-app-img/images/drizzle.png";
-                                        break;
-
-                                    default:
-                                        image.src = "weather-app-img/images/snow.png"
-                                            ;
+                                weatherDescription.innerHTML = data.weather[0].description; 
+                                if (data.weather[0].main == "Clouds") {
+                                    image.src = "images/clouds.png"
+                                } else if (data.weather[0].main == "Clear") {
+                                    image.src = "images/clear.png";
+                                }else if(data.weather[0].main == "Snow"){
+                                    image.src = "images/snow.png";
+                                }else if(data.weather[0].main == "Mist"){
+                                    image.src = "images/mist.png";
+                                }else if(data.weather[0].main == "drizzle"){
+                                    image.src = "images/drizzle.png";
+                                }else if(data.weather[0].main == "Rain"){
+                                    image.src = "images/rain.png";
                                 }
+
                             })
                             .catch(error => {
                                 let errorMesssage = document.querySelector(".errormessage");
-                                
+
                                 errorMesssage.style.display = "block";
                                 weatherDetails.style.display = 'none';
                             })
 
-
-
                     }))
-
         }
-
     })
-
-
-
-}
-
-)
+})
 
