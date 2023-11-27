@@ -4,8 +4,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'custom-lato';
+    src: url('./font/font/Lato-Bold.ttf')format('truetype'),
+    url('./font//font/lato-regular-webfont.woff')format('woff'),
+    url('./font//font/lato-regular-webfont.woff2')format('woff2'),
+    url('./font//font/Lato-Regular.ttf')format('truetype');
+}
 body{
-    font-family: 'poppins', sans-serif;
+    font-family: 'custom-lato', sans-serif;
 }
 .container{
     width: 90%;
@@ -49,6 +57,7 @@ body{
 }
 .errormessage{
     display: none;
+    color: red;
 }
 .weather-condition{
     padding: 30px;
@@ -58,6 +67,9 @@ body{
     align-items: center;
 
     
+}
+.weather-condition p{
+    color: white;
 }
 .weather-condition img{
     width: 150px;

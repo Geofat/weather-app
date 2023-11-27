@@ -4,46 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weather-App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Lato:ital,wght@1,300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
     <div class="container">
         <div class="input-holder">
-            <input type="text" id="name"placeholder="enter your name" autocomplete="on">
-            <input type="text" id="city"placeholder="enter city name" autocomplete="on">
-            <button id = "btn">
-                <img src="weather-app-img/images/search.png" alt="searchbox" >
+            <input type="text" id="name" placeholder="enter your name" autocomplete="on">
+            <input type="text" id="city" placeholder="enter city name" autocomplete="on">
+            <button id="btn">
+                <img src="weather-app-img/images/search.png" alt="searchbox">
             </button>
-    </div>
-        <p class="errormessage">invalid country</p>
 
-        <div class="weather-info">
-            <div class="weather-condition">
-                <img src="weather-app-img/images/clear.png" alt=" cloud condition">
-                <h1 class="temp">22°C</h1>
-                <h2 class="city-name">new york</h2>
-            </div>
         </div>
-        <div class="other-info-container">
-            <div class="other-info">
-                <img src="./weather-app-img/images/humidity.png" alt="humidity">
-                <div class="other-info-detail">
-                    <h4 class="humidity">53%</h4>
-                    <p>humidity</p>
+        <p class="errormessage">please enter a valid location</p>
+        <div class="about-weather">
+            <div class="weather-info">
+                <div class="weather-condition">
+                    <p></p>
+                    <img src="weather-app-img/images/clear.png" alt=" cloud condition">
+                    <marquee behavior="" direction=""></marquee>
+                    <h1 class="temp">0°C</h1>
+                    <h2 class="city-name">city name</h2>
                 </div>
             </div>
-            <div class="other-info">
-                <img src="./weather-app-img/images/wind.png" alt="wind">
-                <div class="other-info-detail">
-                    <h4 class="wind">5.66km/hr</h4>
-                    <p>wind speed</p>
+            <div class="other-info-container">
+                <div class="other-info">
+                    <img src="./weather-app-img/images/humidity.png" alt="humidity">
+                    <div class="other-info-detail">
+                        <h4 class="humidity">0%</h4>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div class="other-info">
+                    <img src="./weather-app-img/images/wind.png" alt="wind">
+                    <div class="other-info-detail">
+                        <h4 class="wind">5.66km/hr</h4>
+                        <p>wind speed</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="main.js"></script>
 </body>
 

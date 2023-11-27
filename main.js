@@ -23,12 +23,15 @@
 // }
 // 
 
-let image = document.querySelector(".weather-condition img");
+let image = document.querySelector(".weather-info .weather-condition img");
+let weatherDate = document.querySelector(".weather-info .weather-condition marquee");
+let weatherDescription = document.querySelector(".weather-info .weather-condition p");
 let temp = document.querySelector(".temp");
 let cityName = document.querySelector(".city-name");
 let humidity = document.querySelector(".humidity");
 let wind = document.querySelector(".wind");
 let weatherBtn = document.getElementById("btn");
+let weatherDetails = document.querySelector('.about-weather');
 
 
 weatherBtn.addEventListener("click", () => {
@@ -42,20 +45,26 @@ weatherBtn.addEventListener("click", () => {
                     .then(response => {
                         response.json()
                             .then(data => {
-
+                                console.log(data)
+                                const date = new Date();
+                                weatherDate.append(date)
                                 temp.innerHTML = Math.round(data.main.temp) + "°C";
                                 cityName.innerHTML = data.name;
                                 humidity.innerHTML = data.main.humidity + "%";
                                 wind.innerHTML = data.wind.speed + "km/hr";
+                                weatherDescription.innerHTML = data.weather[0].description;
+
                                 switch (data.weather[0].main) {
                                     case 'clear':
                                         image.src = "weather-app-img/images/clear.png";
+
                                         break;
                                     case 'rain':
                                         image.src = "weather-app-img/images/rain.png";
                                         break;
                                     case 'clouds':
                                         image.src = "weather-app-img/images/clouds.png";
+                                        
                                         break;
                                     case 'snow':
                                         image.src = "weather-app-img/images/snow.png";
@@ -68,12 +77,21 @@ weatherBtn.addEventListener("click", () => {
                                         break;
 
                                     default:
-                                        image.src = "weather-app-img/images/clouds.png"
+                                        image.src = "weather-app-img/images/snow.png"
                                             ;
                                 }
                             })
+                            .catch(error => {
+                                let errorMesssage = document.querySelector(".errormessage");
+                                
+                                errorMesssage.style.display = "block";
+                                weatherDetails.style.display = 'none';
+                            })
+
+
+
                     }))
-                    reject()
+
         }
 
     })
